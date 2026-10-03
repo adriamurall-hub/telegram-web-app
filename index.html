@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="ca" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Menú CF d'informàtica</title>
+  <title>DevOps Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
-<body>
+<body class="p-3 bg-dark text-light">
 
-  <!-- Barra de navegació amb contenidor per a un millor emmarcat -->
-  <nav class="navbar navbar-expand bg-primary navbar-dark">
-    <div class="container-fluid">
-      <a href="#" class="navbar-brand">Cicles Formatius d'Informàtica</a>
-      <ul class="navbar-nav nav" role="tablist">
-        <li class="nav-item">
-          <a href="#s1" class="nav-link active" data-bs-toggle="tab">SMX</a>
-        </li>
-        <li class="nav-item">
-          <a href="#s2" class="nav-link" data-bs-toggle="tab">ASIX</a>
-        </li>
-        <li class="nav-item">
-          <a href="#s3" class="nav-link" data-bs-toggle="tab">DAM</a>
-        </li>
-      </ul>
+  <div class="text-center mb-4">
+    <h2 class="fw-bold text-info">🛠️ Panel de SysAdmin</h2>
+    <p class="text-muted">Recursos i utilitats ràpides</p>
+  </div>
+
+  <ul class="nav nav-tabs nav-justified mb-3" id="myTab" role="tablist">
+    <li class="nav-item">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#linux">Linux</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#devops">DevOps</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#status">Estat</button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <!-- Linux -->
+    <div class="tab-pane fade show active p-2" id="linux">
+      <div class="card bg-secondary text-white p-3">
+        <h5>Comandaments bàsics</h5>
+        <code>curl -I https://google.com</code><br>
+        <code>htop</code><br>
+        <code>journalctl -xe</code>
+      </div>
     </div>
-  </nav>
-
-  <!-- Contingut de les pestanyes contingut dins d'un container amb marge -->
-  <div class="container mt-4">
-    <div class="tab-content">
-      <div class="tab-pane fade show active" id="s1">
-        <p>Explicació SMX: M1 Muntatge, M2 SOM</p>
+    <!-- DevOps -->
+    <div class="tab-pane fade p-2" id="devops">
+      <div class="card bg-secondary text-white p-3">
+        <h5>Eines contingut</h5>
+        <ul>
+          <li><strong>Docker:</strong> Contenidors d'aplicacions</li>
+          <li><strong>Git:</strong> Control de versions</li>
+        </ul>
       </div>
-      <div class="tab-pane fade" id="s2">
-        <p>Explicació ASIX: M1 Sistemes Informàtics, M2 Ciberseguretat</p>
-      </div>
-      <div class="tab-pane fade" id="s3">
-        <p>Explicació DAM: M1 Sistemes Informàtics, M2 Programació</p>
+    </div>
+    <!-- Status -->
+    <div class="tab-pane fade p-2" id="status">
+      <div class="card bg-secondary text-white p-3 text-center">
+        <h5>Estat de la xarxa</h5>
+        <span class="badge bg-success">Tots els sistemes operatius</span>
       </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>Telegram.WebApp.ready();</script>
 </body>
 </html>
